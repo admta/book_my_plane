@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_11_132316) do
+ActiveRecord::Schema.define(version: 2018_06_11_133528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "planes", force: :cascade do |t|
+    t.integer "rate"
+    t.string "make"
+    t.text "description"
+    t.string "location"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_planes_on_user_id"
+  end
+
+  create_table "rentals", force: :cascade do |t|
+    t.date "starts_at"
+    t.date "ends_at"
+    t.string "status"
+    t.bigint "user_id"
+    t.bigint "plane_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plane_id"], name: "index_rentals_on_plane_id"
+    t.index ["user_id"], name: "index_rentals_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,4 +57,7 @@ ActiveRecord::Schema.define(version: 2018_06_11_132316) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "planes", "users"
+  add_foreign_key "rentals", "planes"
+  add_foreign_key "rentals", "users"
 end
