@@ -1,0 +1,19 @@
+<%= link_to "Go back", @plane %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Add a plane</h1>
+
+      <%= simple_form_for @plane do |f| %>
+        <%= f.input :rate %>
+        <%= f.input :make %>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
