@@ -6,7 +6,7 @@ class PlanesController < ApplicationController
     end
 
     def show
-      @planes = Plane.params[:id]
+      @plane = Plane.find(params[:id])
     end
 
   #   def new
