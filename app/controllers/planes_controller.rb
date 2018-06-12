@@ -6,26 +6,26 @@ class PlanesController < ApplicationController
     end
 
     def show
-      @planes = Plane.params[:id]
+      @plane = Plane.find(params[:id])
     end
 
-  #   def new
-  #     @plane = Plane.new
-  #     @rental = Rental.new
-  #   end
+    def new
+      @plane = Plane.new
+      @rental = Rental.new
+    end
 
-  #   def create
-  #     @plane = Plane.new(plane_params)
-  #     if @plane.valid?
-  #       @plane.save!
-  #       redirect_to @plane
-  #     else
-  #       render :new
-  #     end
-  #   end
+    # def create
+    #   @plane = Plane.new(plane_params)
+    #   if @plane.valid?
+    #     @plane.save!
+    #     redirect_to @plane
+    #   else
+    #     render :new
+    #   end
+    # end
 
-  #   def edit
-  #   end
+    # def edit
+    # end
 
   #   def update
   #    @plane.update(plane_params)
