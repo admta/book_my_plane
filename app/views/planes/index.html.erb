@@ -1,9 +1,8 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(180, 150, 1, 0.3),rgba(180, 150, 1, 0.3)), url('http://azpilots.org/images/news/backcountry/smallplane1.jpg');">
+<div class="banner" style="background-image: linear-gradient(rgba(180, 150, 1, 0.3),rgba(180, 150, 1, 0.3)), url('https://images.trvl-media.com/media/content/expus/graphics/launch/home/tvly/150324_flights-hero-image_1330x742.jpg');">
   <div class="banner-content">
     <h1>Planes</h1>
-    <p>Book/Rent your plane</p>
-    <%= link_to "Add a plane", root_path, class: "btn btn-primary btn-lg" %>
+    <h2>Book your plane</h2>
   </div>
 </div>
 <div class="container">
@@ -12,12 +11,13 @@
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://azpilots.org/images/news/backcountry/smallplane1.jpg');">
           <div class="card-description">
-            <h2><%= plane.description %></h2>
+            <p>Model: <%= plane.make%>, Rate: <%= plane.rate %> euros/day</p>
           </div>
-          <%= link_to "", root_path, class: 'card-link' %>
+          <%= link_to "See details", plane_path(plane), class: 'card-link' %>
         </div>
       </div>
     <% end %>
   </div>
+  <p></p>
+ <p> <%= link_to "Add a plane", new_plane_path, class: "btn btn-primary btn-lg" %></p>
 </div>
-
