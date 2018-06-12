@@ -1,28 +1,30 @@
 class PlanesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
-    def index
-      @planes = Plane.all
+  def index
+    @planes = Plane.all
+  end
+
+  def show
+    @plane = Plane.find(params[:id])
+  end
+
+  def new
+    @plane = Plane.new
+      # @rental = Rental.new
     end
 
-    def show
-      @plane = Plane.find(params[:id])
+  def create
+    @plane = Plane.new(plane_params)
+    @user = current_user
+    @plane.user = @user
+    if @plane.valid?
+      @plane.save!
+      redirect_to @plane
+    else
+      render :new
     end
-
-    def new
-      @plane = Plane.new
-      @rental = Rental.new
-    end
-
-    # def create
-    #   @plane = Plane.new(plane_params)
-    #   if @plane.valid?
-    #     @plane.save!
-    #     redirect_to @plane
-    #   else
-    #     render :new
-    #   end
-    # end
+  end
 
     # def edit
     # end
