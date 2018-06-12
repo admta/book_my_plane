@@ -1,2 +1,44 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1501954557436-2b8d4d8a57e9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79b015e1c281967286f7f8f0c30c609a&auto=format&fit=crop&w=1490&q=80');">
+  <div class="banner-content">
+    <h1>Book my Plane</h1>
+    <p>Find an airplane near you</p>
+
+
+
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag "find your airplane", class: "btn btn-primary btn-lg" %>
+    <% end %>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <h3>our top suggestions</h3>
+      <% @planes.each do |plane| %>
+
+      <div class="col-sm-4">
+        <div class="card-wrapper">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494489002073-cc547946d945?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=299619dc16ca0c5cfea8750b84065cbf&auto=format&fit=crop&w=1350&q=80');">
+          </div>
+
+          <div class="card-description">
+            <h2><%= plane.make %></h2>
+            <p><%= plane.rate %>
+          </div>
+      </div>
+    </div>
+
+      <% end %>
+  </div>
+</div>
+
+
+
+
