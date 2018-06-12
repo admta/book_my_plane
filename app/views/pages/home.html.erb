@@ -1,40 +1,75 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1501954557436-2b8d4d8a57e9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79b015e1c281967286f7f8f0c30c609a&auto=format&fit=crop&w=1490&q=80');">
+<div class="banner" style="background-image: linear-gradient(-225deg, #101010 0%, rgba(0,36,61,0.5) 0%), url('https://images.unsplash.com/photo-1501954557436-2b8d4d8a57e9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79b015e1c281967286f7f8f0c30c609a&auto=format&fit=crop&w=1490&q=80');">
   <div class="banner-content">
     <h1>Book my Plane</h1>
-    <p>Find an airplane near you</p>
-
-
-
+    <p></p>
 
     <%= form_tag("/search", method: "get") do %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag "find your airplane", class: "btn btn-primary btn-lg" %>
+    <%= text_field_tag(:q, "where?") %>
+    <%= submit_tag "find", class: "btn btn-primary btn-lg" %>
     <% end %>
-
   </div>
 </div>
 
-
-
-
-
-<div class="container">
-    <h3>our top suggestions</h3>
-      <% @planes.each do |plane| %>
-
-      <div class="col-sm-4">
-        <div class="card-wrapper"></div>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494489002073-cc547946d945?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=299619dc16ca0c5cfea8750b84065cbf&auto=format&fit=crop&w=1350&q=80');">
+<!-- <div class="container">
+  <div class="row">
+    <h3>Our top suggestions</h3>
+    <% @planes.each do |plane| %>
+      <%= link_to plane_path(plane) do %>
+        <div class="col-sm-4">
+          <div class="card-wrapper">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494489002073-cc547946d945?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=299619dc16ca0c5cfea8750b84065cbf&auto=format&fit=crop&w=1350&q=80');">
+            </div>
+              <div class="card-description">
+                <h2><%= plane.make %></h2>
+                <p><%= plane.rate %>
+              </div>
           </div>
         </div>
+      <% end %>
+    <% end %>
+  </div>
+</div> -->
+
+<div id="about" class=" container page-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      <h1>How does it work??</h1>
+    </div>
+  </div>
+
+  <div class="row three-steps-main">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="first-step column">
+        <img class="icon" height="42" width="42" src="#" />
+        <h3>Search for your location</h3>
+        <p>Our system will display all the planes available for you at the moment. <br></p>
+
       </div>
-</div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="second-step column">
+        <img class="icon" height="42" width="42" src="#" />
+        <h3>Choose the best option for you</h3>
+        <p>Book through our sytem, and wait for your host. <br></p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="third-step column">
+        <img class="icon" height="42" width="42" src="#" />
+        <h3>Payment</h3>
+        <p> <br></p>
 
-<div class="card-description">
-  <h2><%= plane.make %></h2>
-  <p><%= plane.rate %></p>
-</div>
+      </div>
+    </div>
+  </div>
 
+
+<div class="footer">
+  <div class="footer-copyright">
+
+    Cheers from Le Wagon Amsterdam <i class="fa fa-heart"></i>
+  </div>
+</div>
 
 
 
