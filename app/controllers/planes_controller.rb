@@ -9,6 +9,8 @@ class PlanesController < ApplicationController
       @planes = Plane.params[:id]
     end
 
+
+
   #   def new
   #     @plane = Plane.new
   #     @rental = Rental.new
