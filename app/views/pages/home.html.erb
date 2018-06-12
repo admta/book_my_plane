@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1501954557436-2b8d4d8a57e9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79b015e1c281967286f7f8f0c30c609a&auto=format&fit=crop&w=1490&q=80');">
+  <div class="banner-content">
+    <h1>Book my Plane</h1>
+    <p>Find an airplane near you</p>
+
+
+
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag "find your airplane", class: "btn btn-primary btn-lg" %>
+    <% end %>
+
+  </div>
+</div>
+
+
