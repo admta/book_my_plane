@@ -8,16 +8,22 @@
 <div class="container">
   <div class="row">
     <% @planes.each do |plane| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://azpilots.org/images/news/backcountry/smallplane1.jpg');">
-          <div class="card-description">
-            <p>Model: <%= plane.make%>, Rate: <%= plane.rate %> euros/day</p>
+      <%= link_to plane_path(plane) do %>
+        <div class="col-sm-4">
+          <div class="card-wrapper">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494489002073-cc547946d945?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=299619dc16ca0c5cfea8750b84065cbf&auto=format&fit=crop&w=1350&q=80');">
+            </div>
+              <div class="card-description">
+                <h2><%= plane.make %></h2>
+                <p><%= plane.rate %>
+                <p>See details</p>
+              </div>
           </div>
-          <%= link_to "See details", plane_path(plane), class: 'card-link' %>
         </div>
-      </div>
+      <% end %>
     <% end %>
+    <p> <%= link_to "Add a plane", new_plane_path, class: "btn btn-primary btn-lg" %></p>
   </div>
-  <p></p>
- <p> <%= link_to "Add a plane", new_plane_path, class: "btn btn-primary btn-lg" %></p>
 </div>
+
+
