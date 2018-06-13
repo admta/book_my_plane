@@ -36,27 +36,27 @@ end
 planes =
 [
   {
-    rate: 80,
+    rate: 400,
     make: 'Cessna 182',
-    description: '4 seats, Ifr & Vfr',
+    description: 'Four-seat, single-engined, available for VFR & IFR flying',
     location: 'Amsterdam',
     user: User.first,
     picture: "https://upload.wikimedia.org/wikipedia/commons/6/66/Cessna_182P.jpg"
   },
 
   {
-    rate: 120,
-    make: 'Tommy PA 38',
-    description: '2 seats, Ifr & Vfr',
+    rate: 250,
+    make: 'Tomahawk PA 38',
+    description: 'Two-seat, low wing, single-engined, available for VFR & IFR flying',
     location: 'Paris',
     user: User.second,
     picture: "http://imgproc.airliners.net/photos/airliners/6/7/4/2017476.jpg?v=v40"
   },
 
   {
-    rate: 130,
+    rate: 200,
     make: 'Cessna 152',
-    description: '2 seats, Ifr & Vfr',
+    description: 'Two-seat, single-engined, only available for VFR flying',
     location: 'Moscow',
     user: User.third,
     picture: "http://www.calgaryflyingclub.com/cfc-assets/uploads/152.jpg"

@@ -2,20 +2,20 @@
 </div>
 <div class="description">
     <h1><%= @plane.make %></h1>
-    <h2><%= @plane.description %></h2>
     <p>$<%= @plane.rate %></p>
-    <p> <%= link_to "Book this plane", new_plane_rental_path(@plane), class: "btn btn-primary btn-lg" %></p>
-</div>
-
-<p> Delete plane
-<%= link_to plane_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+    <p><%= @plane.description %></p>
+    <p><%= link_to "Book this plane", new_plane_rental_path(@plane), class: "btn btn-primary btn-lg" %></p>
+    <p><%= link_to plane_path, method: :delete, data: { confirm: "Are you sure?" } do %>
 <i class="fa fa-trash destroy_plane"></i>
 <% end %>
-Edit plane
+Edit
 <%= link_to edit_plane_path(@plane),  method: :get do %>
 <i class="far fa-edit edit_plane"></i>
 <% end %>
 <p>
+</div>
+
+
 
 <div class="footer">
   <div class="footer-copyright">
