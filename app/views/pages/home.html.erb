@@ -3,10 +3,9 @@
     <h1>Book my Plane</h1>
     <p></p>
 
-    <%= form_tag("/search", method: "get") do %>
-    <%= text_field_tag(:q, "where?") %>
-    <%= submit_tag "find", class: "btn btn-primary btn-lg" %>
-    <% end %>
+
+    <input type="text" placeholder="where?" name="search">
+    <a a href="planes#index" class="btn btn-primary btn-mg">find</a>
   </div>
 </div>
 

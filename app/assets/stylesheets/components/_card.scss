@@ -93,8 +93,11 @@
 
 
 #map {
+  border-color: red;
   flex: 1 0 450px;
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
+  border: solid black 2px;
+  margin-bottom: 10px;
 }

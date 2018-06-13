@@ -3,7 +3,8 @@
 <div class="description">
     <h1><%= @plane.make %></h1>
     <h2><%= @plane.description %></h2>
-    <p><%= @plane.rate %></p>
+    <p>$<%= @plane.rate %></p>
+    <p> <%= link_to "Book this plane", new_plane_rental_path(@plane), class: "btn btn-primary btn-lg" %></p>
 </div>
 
 <p> Delete plane
