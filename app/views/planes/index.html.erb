@@ -9,9 +9,9 @@
   <div class="row">
     <% @planes.each do |plane| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://azpilots.org/images/news/backcountry/smallplane1.jpg');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= plane.picture %>');">
           <div class="card-description">
-            <p>Model: <%= plane.make%>, Rate: <%= plane.rate %> euros/day</p>
+            <p>Model: <%= plane.make%>, Rate: <%= plane.rate %> $/day</p>
           </div>
           <%= link_to "See details", plane_path(plane), class: 'card-link' %>
         </div>
