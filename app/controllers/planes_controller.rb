@@ -2,7 +2,14 @@ class PlanesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @planes = Plane.all
+    @planes = Plane.where.not(latitude: nil, longitude: nil)
+
+    @markers= @planes.map do |plane|
+      {
+        lat: plane.latitude,
+        lng: plane.longitude
+      }
+    end
   end
 
   def show
@@ -35,7 +42,7 @@ class PlanesController < ApplicationController
     if @plane.update(plane_params)
       redirect_to @plane, notice: "Plane was updated"
     else
-    render :edit
+      render :edit
     end
   end
 
@@ -49,7 +56,6 @@ class PlanesController < ApplicationController
 
   def set_plane
     @plane = Plane.find(params[:plane_id])
-
   end
 
   def plane_params
