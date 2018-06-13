@@ -1,5 +1,5 @@
 .banner {
-  color: white;
+  color: #E6E8E6;
   text-align: center;
   height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -8,14 +8,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.banner-home {
+  height: 70vh;
+
+}
 .banner h1 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Indie Flower', cursive;
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  font-weight: lighter;
 }
 .banner p {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Indie Flower', cursive;
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
