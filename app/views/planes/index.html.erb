@@ -12,12 +12,13 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= plane.picture %>');">
           <div class="card-description">
             <p>Model: <%= plane.make%>, Rate: <%= plane.rate %> $/day</p>
+                <p>See details</p>
           </div>
-          <%= link_to "See details", plane_path(plane), class: 'card-link' %>
         </div>
-      </div>
+      <% end %>
     <% end %>
+    <p> <%= link_to "Add a plane", new_plane_path, class: "btn btn-primary btn-lg" %></p>
   </div>
-  <p></p>
- <p> <%= link_to "Add a plane", new_plane_path, class: "btn btn-primary btn-lg" %></p>
 </div>
+
+
