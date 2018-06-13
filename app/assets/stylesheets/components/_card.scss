@@ -1,18 +1,47 @@
-
-.container {
+.main-container {
+  display: flex;
   margin-top: 20px;
+}
+.container {
+}
+
+.cards-container {
+  flex: 2 0 0;
+  margin-right: 10px;
 }
 .card-wrapper {
   position: relative;
 }
 
+  // background-size: cover;
+  // background-position: center;
+  // color: white;
+  // height: 150px;
+  // border-radius: 1px;
+  // margin: 15px 10px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-around;
+  // font-size: 24px;
+  // text-align: center;
+  // padding: 50px;
+  // font-weight: bolder;
+
 .card {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   margin-top: 15px;
   height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
-  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding: 50px;
+  font-weight: bolder;
+  color: #E6E8E6;
   transition: filter 0.3s ease;
   &:hover {
     filter: brightness(0.4);
@@ -71,14 +100,14 @@
 }
 
 .btn {
-  background-color: #ffb2b2;
+  background-color: #0D0628;
   border-color: transparent;
   border-radius: 4px;
 
   // transition: filter, 0.3, ease;
 
   &:hover {
-    background-color: #ff7f7f;
+    background-color: #0D0628;
     border-color: transparent;
 
 
@@ -93,11 +122,21 @@
 
 
 #map {
-  border-color: red;
-  flex: 1 0 450px;
+  flex: 1 0 0;
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
   border: solid black 2px;
   margin-bottom: 10px;
+}
+
+.awesome-links {
+  color: #0D0628;
+  text-decoration: none;
+
+  &:hover {
+    color: #475657;
+    text-decoration: none;
+    border-color: transparent;
+  }
 }
