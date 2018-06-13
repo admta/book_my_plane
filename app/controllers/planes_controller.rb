@@ -26,19 +26,24 @@ class PlanesController < ApplicationController
     end
   end
 
-    # def edit
-    # end
+  def edit
+    @plane = Plane.find(params[:id])
+  end
 
-  #   def update
-  #    @plane.update(plane_params)
-  #    redirect_to plane_path(@plane)
-  #  end
+  def update
+    @plane = Plane.find(params[:id])
+    if @plane.update(plane_params)
+      redirect_to @plane, notice: "Plane was updated"
+    else
+    render :edit
+    end
+  end
 
-  #  def destroy
-  #   @plane = Plane.find(params[:id])
-  #   @plane.destroy
-  #   redirect_to root_path
-  # end
+  def destroy
+    @plane = Plane.find(params[:id])
+    @plane.destroy
+    redirect_to root_path
+  end
 
   private
 
