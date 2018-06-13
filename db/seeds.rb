@@ -37,10 +37,11 @@ planes =
 [
   {
     rate: 80,
-    make: 'CESSAN 182',
+    make: 'Cessna 182',
     description: '4 seats, Ifr & Vfr',
     location: 'Amsterdam',
-    user: User.first
+    user: User.first,
+    picture: "https://upload.wikimedia.org/wikipedia/commons/6/66/Cessna_182P.jpg"
   },
 
   {
@@ -48,7 +49,8 @@ planes =
     make: 'Tommy PA 38',
     description: '2 seats, Ifr & Vfr',
     location: 'Paris',
-    user: User.second
+    user: User.second,
+    picture: "http://imgproc.airliners.net/photos/airliners/6/7/4/2017476.jpg?v=v40"
   },
 
   {
@@ -56,7 +58,8 @@ planes =
     make: 'Cessna 152',
     description: '2 seats, Ifr & Vfr',
     location: 'Moscow',
-    user: User.third
+    user: User.third,
+    picture: "http://www.calgaryflyingclub.com/cfc-assets/uploads/152.jpg"
   }
 ]
 
