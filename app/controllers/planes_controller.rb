@@ -53,7 +53,7 @@ class PlanesController < ApplicationController
   end
 
   def plane_params
-    params.require(:plane).permit(:rate, :make, :description, :location)
+    params.require(:plane).permit(:rate, :make, :description, :location, :picture)
   end
 end
 

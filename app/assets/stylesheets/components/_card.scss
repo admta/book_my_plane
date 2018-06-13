@@ -8,7 +8,7 @@
 
 .card {
   margin-top: 15px;
-  height: 400px;
+  height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -89,4 +89,12 @@
 .row {
   font-family: 'Work Sans', sans-serif;
   text-align: center;
+}
+
+
+#map {
+  flex: 1 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
 }

@@ -1,24 +1,9 @@
-
- <!--  <div>
-    <a href="#">Cessan 182</a>
-    <a href="#">Tommy PA 38</a>
-    <a href="#">Cessna 152</a>
-  </div>
-  <div class="card-description">
-    <p>"description here"</p>
-  </div> -->
-
-<!-- <div class="col-sm-4">
-  <div class="card-wrapper">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494489002073-cc547946d945?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=299619dc16ca0c5cfea8750b84065cbf&auto=format&fit=crop&w=1350&q=80');">
-</div> -->
-
-<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1494489002073-cc547946d945?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=299619dc16ca0c5cfea8750b84065cbf&auto=format&fit=crop&w=1350&q=80');">
+<div class="banner" style="background-image: url('<%= @plane.picture %>');">
 </div>
 <div class="description">
     <h1><%= @plane.make %></h1>
     <h2><%= @plane.description %></h2>
-    <p>$<%= @plane.rate %></p>
+    <p><%= @plane.rate %></p>
 </div>
 
 <p> Delete plane
