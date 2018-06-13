@@ -16,11 +16,11 @@
       <%= link_to plane_path(plane) do %>
         <div class="col-sm-4">
           <div class="card-wrapper">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494489002073-cc547946d945?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=299619dc16ca0c5cfea8750b84065cbf&auto=format&fit=crop&w=1350&q=80');">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= plane.picture %>');">
             </div>
               <div class="card-description">
                 <h2><%= plane.make %></h2>
-                <p><%= plane.rate %>
+                <p><%= plane.rate %> </p>
               </div>
           </div>
         </div>
@@ -29,13 +29,13 @@
     <%= link_to "Check all planes", planes_path, class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 </div>
-
+</div>
 <div id="about" class=" container page-container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
       <h1>How does it work??</h1>
     </div>
-  </div>
+
 
   <div class="row three-steps-main">
     <div class="col-xs-12 col-sm-6 col-md-4">
