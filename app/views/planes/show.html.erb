@@ -21,3 +21,12 @@
     <p>$<%= @plane.rate %></p>
 </div>
 
+<p> Delete plane
+<%= link_to plane_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+<i class="fa fa-trash destroy_plane"></i>
+<% end %>
+Edit plane
+<%= link_to edit_plane_path(@plane),  method: :get do %>
+<i class="far fa-edit edit_plane"></i>
+<% end %>
+
