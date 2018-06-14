@@ -1,23 +1,19 @@
 <div class="banner banner-home" style="background-image: linear-gradient(-225deg, #101010 0%, rgba(0,36,61,0.5) 0%), url('https://images.trvl-media.com/media/content/expus/graphics/launch/home/tvly/150324_flights-hero-image_1330x742.jpg');">
   <div class="banner-content">
-    <h1>Book my Plane</h1>
-    <p> <%= form_tag planes_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Enter location"%>
-    <% end %> <a a href="planes#index" class="btn btn-primary btn-mg">find</a> </p>
+    <h1>Book My Plane<h1>
+      <a a href="planes#index" class="btn btn-primary btn-mg">Book/Rent a plane anywhere in the world</a>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
     <h3><%= link_to "Check all planes here", planes_path, class: "awesome-links" %></h3>
+
     <% @planes.each do |plane| %>
       <%= link_to plane_path(plane) do %>
         <div class="col-sm-4">
           <div class="card-wrapper">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= plane.picture %>');">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path plane.picture, height: 300, width: 400, crop: :fill %>');">
             </div>
               <div class="card-description">
                 <h2><%= plane.make %></h2>
