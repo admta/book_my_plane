@@ -41,7 +41,7 @@ planes =
     description: 'Four-seat, single-engined, available for VFR & IFR flying',
     location: 'Amsterdam',
     user: User.first,
-    picture: "https://upload.wikimedia.org/wikipedia/commons/6/66/Cessna_182P.jpg"
+    picture: "remote_picture_url"
   },
 
   {
@@ -50,7 +50,7 @@ planes =
     description: 'Two-seat, low wing, single-engined, available for VFR & IFR flying',
     location: 'Paris',
     user: User.second,
-    picture: "http://imgproc.airliners.net/photos/airliners/6/7/4/2017476.jpg?v=v40"
+    picture: "remote_picture_url"
   },
 
   {
@@ -59,7 +59,7 @@ planes =
     description: 'Two-seat, single-engined, only available for VFR flying',
     location: 'Moscow',
     user: User.third,
-    picture: "http://www.calgaryflyingclub.com/cfc-assets/uploads/152.jpg"
+    picture: "remote_picture_url"
   }
 ]
 
