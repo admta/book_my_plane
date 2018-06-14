@@ -49,7 +49,7 @@ class PlanesController < ApplicationController
   def destroy
     @plane = Plane.find(params[:id])
     @plane.destroy
-    redirect_to root_path
+    redirect_to articles_path, notice: "Plane was deleted"
   end
 
   private
