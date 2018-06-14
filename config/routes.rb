@@ -9,3 +9,11 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#show'
 end
+
+
+
+# get 'planes', to: 'planes#index'
+# get 'planes/id', to: 'planes#show'
+# post 'planes/id', to: 'planes#create'
+# get 'planes/new', to: 'planes#new'
+# get 'planes/id/edit', to: 'planes#edit'
