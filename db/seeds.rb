@@ -41,7 +41,7 @@ planes =
     description: 'Four-seat, single-engined, available for VFR & IFR flying',
     location: 'Amsterdam',
     user: User.first,
-    picture: "remote_picture_url"
+    remote_picture_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Cessna182t_skylane_n2231f_cotswoldairshow_2010_arp.jpg/1200px-Cessna182t_skylane_n2231f_cotswoldairshow_2010_arp.jpg"
   },
 
   {
@@ -50,7 +50,7 @@ planes =
     description: 'Two-seat, low wing, single-engined, available for VFR & IFR flying',
     location: 'Paris',
     user: User.second,
-    picture: "remote_picture_url"
+    remote_picture_url: "http://www.flugzeuginfo.net/acimages/pa38-112_d-egkv_1_edwi08.jpg"
   },
 
   {
@@ -59,7 +59,7 @@ planes =
     description: 'Two-seat, single-engined, only available for VFR flying',
     location: 'Moscow',
     user: User.third,
-    picture: "remote_picture_url"
+    remote_picture_url: "https://upload.wikimedia.org/wikipedia/commons/e/e8/G-BRNE-Cessna152.jpg"
   }
 ]
 
