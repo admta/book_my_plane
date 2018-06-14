@@ -1,5 +1,6 @@
-<div class="banner" style="background-image: url('<%= @plane.picture %>');">
-</div>
+
+<div class="container_picture">
+<div class="banner" style="background-image: url('<%= @plane.picture %>');"></div>
 <div class="description">
     <h1><%= @plane.make %></h1>
     <p>$<%= @plane.rate %></p>
@@ -13,7 +14,9 @@ Edit
 <%= link_to edit_plane_path(@plane),  method: :get do %>
 <i class="far fa-edit edit_plane"></i>
 <% end %>
+<% end %>
 <p>
+</div>
 </div>
 
 
