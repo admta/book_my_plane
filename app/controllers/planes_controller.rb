@@ -2,22 +2,17 @@ class PlanesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-
     if params[:query].present?
-      @planes = PgSearch.multisearch(params[:query])
+      @planes = Plane.full_search(params[:query])
     else
-      @planes = Plane.where.not(latitude: nil, longitude: nil)
+      @planes = Plane.all
     end
 
-    @markers = @planes.map do |plane|
-      if params[:query].present?
-        plane = Plane.find_by_id(plane.searchable_id)
-      end
+    @markers = @planes.where.not(latitude: nil, longitude: nil).map do |plane|
       {
         lat: plane.latitude,
         lng: plane.longitude,
         infoWindow: { content: render_to_string(partial: "../views/planes/map_box.html.erb", locals: { plane: plane }) }
-        # infoWindow: { content: render 'planes/map_box' }
       }
     end
 
