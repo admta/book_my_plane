@@ -21,8 +21,8 @@
           <%= image_tag "http://www.planecharacters.com/wp-content/uploads/2015/04/character-pilot-ollie-square-wpcf_400x400.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Edit Profile") %>
               <% end %>
             </li>
             <li>
