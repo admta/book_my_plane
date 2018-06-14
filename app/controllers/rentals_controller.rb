@@ -31,9 +31,9 @@ class RentalsController < ApplicationController
     @rental.user = @user
 
     if @rental.save
-      redirect_to plane_rental_path(@plane), notice: "You booked the plane succefully"
+      redirect_to plane_path(@plane), notice: "You booked the plane succefully"
     else
-      redirect_to new_plane_rental(@rental)
+      render "rentals/new"
     end
   end
 
