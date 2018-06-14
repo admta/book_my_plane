@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <h1>Hello, <%= @user.first_name %> <%= @user.last_name %></h1>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <h2>Here are your Planes:</h2>
+      <ul>
+        <% @planes.each do |item| %>
+        <li>
+          <%=  link_to item.make, plane_path(item) %>
+          <%= item.description %>
+          <%= item.rate %>
+          <%= item.location %>
+        </li>
+          <% end %>
+      </ul>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <h2>Here are your bookings</h2>
+
+      <ul>
+        <% @rentals.each do |item| %>
+        <li>
+          <%=  link_to item.plane.make, plane_path(item) %>
+          <%= item.plane.description %>
+          <%= item.plane.rate %>
+          <%= item.plane.location %>
+          from <%= item.starts_at %>
+          to <%= item.ends_at %>
+          <%= item.user.first_name %>
+          <%= item.user.last_name %>
+
+          <%= link_to rental_path(item), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash"></i>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
