@@ -76,6 +76,11 @@
     font-size: 24px;
   }
 
+  & h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18px;
+  }
+
   & p {
     font-family: 'Work Sans', sans-serif;
     font-size: 14px;
@@ -130,6 +135,11 @@
   margin-bottom: 10px;
 }
 
+#mapbox {
+    max-width: 500px;
+    max-height: 500px;
+  }
+
 .awesome-links {
   color: #0D0628;
   text-decoration: none;
@@ -139,4 +149,5 @@
     text-decoration: none;
     border-color: transparent;
   }
+
 }

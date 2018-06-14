@@ -1,9 +1,11 @@
-<div class="banner" style="background-image: url('<%= @plane.picture %>');">
-</div>
+
+<div class="container_picture">
+<div class="banner" style="background-image: url('<%= @plane.picture %>');"></div>
 <div class="description">
     <h1><%= @plane.make %></h1>
     <p>$<%= @plane.rate %></p>
     <p><%= @plane.description %></p>
+    <p><%= @plane.location %></p>
     <p><%= link_to "Book this plane", new_plane_rental_path(@plane), class: "btn btn-primary btn-lg" %></p>
     <p><%= link_to plane_path, method: :delete, data: { confirm: "Are you sure?" } do %>
 <i class="fa fa-trash destroy_plane"></i>
@@ -12,7 +14,9 @@ Edit
 <%= link_to edit_plane_path(@plane),  method: :get do %>
 <i class="far fa-edit edit_plane"></i>
 <% end %>
+<% end %>
 <p>
+</div>
 </div>
 
 
