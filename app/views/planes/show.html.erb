@@ -1,4 +1,4 @@
-
+<div class="responsive">
 <div class="container_picture">
 <div class="banner" style="background-image: url('<%= @plane.picture %>');"></div>
 <div class="description">
@@ -6,15 +6,22 @@
     <p>$<%= @plane.rate %></p>
     <p><%= @plane.description %></p>
     <p><%= @plane.location %></p>
+    <%  if current_user != @plane.user %>
     <p><%= link_to "Book this plane", new_plane_rental_path(@plane), class: "btn btn-primary btn-lg" %></p>
-    <p>Delete<%= link_to plane_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+    <% else %>
+    <span>Delete<%= link_to plane_path, method: :delete, data: { confirm: "Are you sure?" } do %>
 <i class="fa fa-trash destroy_plane"></i>
+</span>
 <% end %>
+<span>
 Edit
 <%= link_to edit_plane_path(@plane),  method: :get do %>
 <i class="far fa-edit edit_plane"></i>
+</span>
 <% end %>
-<p>
+<% end %>
+</div>
+</div>
 </div>
 </div>
 
@@ -22,7 +29,6 @@ Edit
 
 <div class="footer">
   <div class="footer-copyright">
-   <p> <%= link_to "Go back", planes_path(@plane) %> </p>
     Cheers from Le Wagon Amsterdam <i class="fa fa-heart"></i>
   </div>
 </div>
