@@ -5,11 +5,9 @@
     <h1><%= @plane.make %></h1>
     <p>$<%= @plane.rate %></p>
     <p><%= @plane.description %></p>
-    <% if current_user == @plane.user %>
-    <div>
-  <p class="book_button"><%= link_to "Book this plane", new_plane_rental_path(@plane), class: "btn btn-primary btn-lg" %></p>
-</div>
-    <p>Delete<%= link_to plane_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+    <p><%= @plane.location %></p>
+    <p><%= link_to "Book this plane", new_plane_rental_path(@plane), class: "btn btn-primary btn-lg" %></p>
+    <p><%= link_to plane_path, method: :delete, data: { confirm: "Are you sure?" } do %>
 <i class="fa fa-trash destroy_plane"></i>
 <% end %>
 Edit

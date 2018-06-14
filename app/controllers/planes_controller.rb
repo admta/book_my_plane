@@ -4,10 +4,12 @@ class PlanesController < ApplicationController
   def index
     @planes = Plane.where.not(latitude: nil, longitude: nil)
 
-    @markers= @planes.map do |plane|
+    @markers = @planes.map do |plane|
       {
         lat: plane.latitude,
-        lng: plane.longitude
+        lng: plane.longitude,
+        infoWindow: { content: render_to_string(partial: "../views/planes/map_box.html.erb", locals: { plane: plane }) }
+        # infoWindow: { content: render 'planes/map_box' }
       }
     end
   end
