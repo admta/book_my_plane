@@ -1,5 +1,4 @@
 <div class="main-container">
-  <!-- Left side of the screen -->
   <div class="cards-container">
     <%= form_tag planes_path, method: :get, :id => "search_form" do %>
       <%= text_field_tag :query,
@@ -7,23 +6,21 @@
         class: "form-control",
         placeholder: "enter location or model"
       %>
-      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search button',:name => nil%>
 
     <% end %>
-    <div class="row">
+    <div class="row card-row">
       <% @planes.each do |plane| %>
 
         <%= link_to plane_path(plane) do %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="card-wrapper">
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path plane.picture, height: 300, width: 400, crop: :fill %>);">
-
-
             </div>
             <div class="card-description">
               <h2><%= plane.make %></h2>
-              </h3>$<%= plane.rate %></h3>
-              <p><%= plane.location %></p>
+              $<%= plane.rate %>
+              <%= plane.location %>
             </div>
           </div>
         </div>
@@ -32,20 +29,10 @@
       <% end %>
     </div>
   </div>
-
-
-  <!-- Right side of the screen -->
   <div id="map" data-markers="<%= @markers.to_json %>">
   </div>
-
-<!-- End of main container -->
 </div>
 
 
-<!-- Footer -->
-<div class="footer">
-  <div class="footer-copyright">
-    Have a safe flight from the Amsterdam team <i class="fas fa-plane"></i>
-  </div>
-</div>
+
 
