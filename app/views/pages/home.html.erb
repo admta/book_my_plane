@@ -1,34 +1,52 @@
 <div class="banner banner-home" style="background-image: linear-gradient(-225deg, #101010 0%, rgba(0,36,61,0.5) 0%), url('https://images.trvl-media.com/media/content/expus/graphics/launch/home/tvly/150324_flights-hero-image_1330x742.jpg');">
   <div class="banner-content">
-    <h1>Book my Plane</h1>
+    <h1>BOOK MY PLANE</h1>
+    <%= form_tag planes_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control home-form",
+        placeholder: "where?"
+      %>
+    <% end %>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
-    <h1>How does it work??</h1>
-  </div>
+<div class="wrapper">
+
+<div id="about" class="container page-container">
 
 
-<div class="row three-steps-main">
-  <div class="col-xs-12 col-sm-6 col-md-6">
-    <div class="first-step column">
-      <img class="icon" height="42" width="42" src="https://cdn4.iconfinder.com/data/icons/seo-internet-marketing-1-3/256/Local_SEO-512.png" />
-      <h3>Search for your location</h3>
-      <p>Our system will display all the planes available for you at the moment. <br></p>
 
+  <div class="row three-steps-main">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="first-step column">
+        <i class="fas fa-search"></i>
+        <h3>Search</h3>
+        <p>Just pick the one suits your needs, and our system will take care of everything you need.<br>We do our best to keep it simple!</p>
+
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="second-step column">
+        <!-- <img class="icon" height="42" width="42" src="https://cdn3.iconfinder.com/data/icons/transportation-13/512/aircraft-512.png" /> -->
+        <i class="fas fa-plane"></i>
+        <h3>Book a plane</h3>
+        <p>Just pick the one suits your needs, and our system will take care of everything you need.<br>We do our best to keep it simple!</p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="third-step column">
+        <!-- <img class="icon" height="42" width="42" src="https://www.biddwell.com/static/landing-img/two-point-zero/landlord/Landlord-Icon-NegoitateOnRate.png" /> -->
+        <i class="fas fa-wallet"></i>
+        <h3>Become a PlaneLord</h3>
+        <p>Just pick the one suits your needs, and our system will take care of everything you need.<br>We do our best to keep it simple!</p>
+
+      </div>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-6 col-md-6">
-    <div class="second-step column">
-      <img class="icon" height="42" width="42" src="https://cdn3.iconfinder.com/data/icons/transportation-13/512/aircraft-512.png" />
-      <h3>Browse through planes</h3>
-      <p>Just pick the one suits your needs, and our system will take care of everything you need. <br></p>
-    </div>
-  </div>
 
-<div class="container">
-  <div class="row">
-    <h3><%= link_to "Check all planes here", planes_path, class: "awesome-links" %></h3>
+  <div class="card-container">
+    <h3>Recommended for you</h3>
+  <div class="row card-row">
     <% @planes.each do |plane| %>
       <%= link_to plane_path(plane) do %>
         <div class="col-sm-4">
@@ -37,7 +55,7 @@
             </div>
               <div class="card-description">
                 <h2><%= plane.make %></h2>
-                $<%= plane.rate %>
+                <!-- $<%= plane.rate %> -->
                 <%= plane.location %>
               </div>
           </div>
@@ -45,21 +63,9 @@
       <% end %>
     <% end %>
   </div>
+
 </div>
 </div>
-
-
-<div id="about" class=" container page-container">
-
-<!--     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="third-step column">
-        <img class="icon" height="42" width="42" src="#" />
-        <h3>Payment</h3>
-        <p> <br></p>
-
-      </div>
-    </div> -->
-  </div>
 
 
 <div class="footer">

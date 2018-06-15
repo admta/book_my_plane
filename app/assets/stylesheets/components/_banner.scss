@@ -2,28 +2,30 @@
   color: #E6E8E6;
   text-align: center;
   height: calc(100vh - 70px);
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   background-position: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
 }
 
 .banner-home {
-  height: 100vh;
+  height: 70vh;
 
 }
 .banner h1 {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Julius Sans One', sans-serif;
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   font-weight: lighter;
+  padding: 10px;
 }
 .banner p {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Julius Sans One', sans-serif;
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
