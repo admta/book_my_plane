@@ -1,12 +1,14 @@
+<div id="newshow">
 <div class="container">
   <div class="row">
     <h1>Hello, <%= @user.first_name %> <%= @user.last_name %></h1>
+    <br>
     <div class="col-xs-12 col-sm-6 col-md-6">
       <h2>Here are your Planes:</h2>
       <ul>
         <% @planes.each do |item| %>
         <li>
-          <%=  link_to item.make, plane_path(item) %>
+          <%= link_to item.make, plane_path(item) %>
           <%= item.description %>
           <%= item.rate %>
           <%= item.location %>
@@ -39,7 +41,17 @@
     </div>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+</div>
 
+<div class="footer">
+  <div class="footer-copyright">
+    Have a safe flight from the Amsterdam team <i class="fas fa-plane"></i>
+  </div>
+</div>
 
 
 

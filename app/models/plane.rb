@@ -17,4 +17,16 @@ class Plane < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+  after_validation :set_default_picture, if: :picture_missing?
+
+  private
+
+  def set_default_picture
+    self.remote_picture_url = "https://chrisguillebeau.com/files/2016/10/plane.jpg"
+  end
+
+  def picture_missing?
+    picture.blank?
+  end
 end

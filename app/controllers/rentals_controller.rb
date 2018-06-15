@@ -16,14 +16,7 @@ class RentalsController < ApplicationController
   end
 
   def create
-    @rental = Rental.new(set_date)
-
-
-
-    #### using currently logged in user when creating rental (setting it to pending) to set user to rental (owner of the plane)
-    ####
-
-
+    @rental = Rental.new(rental_params)
     @plane = Plane.find(params[:plane_id])
     @rental.plane = @plane
 
@@ -51,11 +44,6 @@ private
     @rental = Rental.find(params[:id])
   end
 
-  def set_date
-    @start_date = Date.parse("#{params[:rental]['starts_at(1i)']}-#{params[:rental]['starts_at(2i)']}-#{params[:rental]['starts_at(3i)']}")
-    @end_date = Date.parse("#{params[:rental]['ends_at(1i)']}-#{params[:rental]['ends_at(2i)']}-#{params[:rental]['ends_at(3i)']}")
-    return {starts_at: @start_date, ends_at: @end_date}
-  end
   def rental_params
       params.require(:rental).permit(:start_date, :end_date)
 
