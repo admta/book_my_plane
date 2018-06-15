@@ -1,29 +1,18 @@
-<div id="newshow">
-<div class="container">
-
-    <h2>Booking Details</h2>
-    <p>Please select starting and ending date for your booking</p>
-    <br>
+<div class="container dashboard-container">
+  <div class="row details">
+    <h2>Please select the dates</h2>
   </div>
 <div>
   <div class="form-wrapper" style="width: 400px; margin: 0 auto; text-align:center">
     <%= simple_form_for [@plane, @rental] do |f| %>
       <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"},label: "From:"%>
       <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"}, label: "Until:"%>
-      <%= f.button :submit, "Book", class: "btn btn-primary" %>
-      <br>
+      <%= f.button :submit, "Book", class: "btn btn-primary button" %>
     <% end %>
-    <br>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 </div>
-<br>
 </div>
+
 
 
 

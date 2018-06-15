@@ -1,21 +1,18 @@
 
 <div id="newshow">
-<div class="container">
+<div class="container dashboard-container">
 
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h1>Rent your plane</h1>
-      <p>List the details of the plane you want to rent out below. </p>
-      <p>Don't forget to upload a picture :)</p>
+      <h1>Plane Details</h1>
 
       <%= simple_form_for @plane do |f| %>
-        <%= f.input :rate , placeholder: "Enter rent out price of your plane", label: "Rent out price $/day:" %>
-        <%= f.input :make, placeholder: "Plane model"  %>
-        <%= f.input :description, placeholder: "Enter plane description and specifications for pilots" %>
-        <%= f.input :location, placeholder: "Enter city"  %>
-        <%= f.input :picture , label: "Upload a picture of your plane:"%>
+        <%= f.input :rate , placeholder: "Eg. $180", label: "Rate per day" %>
+        <%= f.input :make, placeholder: "cessna 152"  %>
+        <%= f.input :description, placeholder: "specifications" %>
+        <%= f.input :location, placeholder: "city"  %>
+        <%= f.input :picture , label: "Picture"%>
         <%= f.button :submit, class: 'btn btn-primary button'%>
-        <br
       <% end %>
     </div>
   </div>
@@ -23,9 +20,4 @@
 <%= link_to "Go back", @plane %>
 </div>
 
-<br>
-<div class="footer">
-  <div class="footer-copyright">
-    Have a safe flight from the Amsterdam team <i class="fas fa-plane"></i>
-  </div>
-</div>
+
