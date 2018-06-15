@@ -7,6 +7,8 @@
         class: "form-control",
         placeholder: "enter location or model"
       %>
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+
     <% end %>
     <div class="row">
       <% @planes.each do |plane| %>
