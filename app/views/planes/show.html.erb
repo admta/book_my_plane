@@ -7,7 +7,7 @@
     <p><%= @plane.description %></p>
     <p><%= @plane.location %></p>
     <%  if current_user != @plane.user %>
-    <p><%= link_to "Book this plane", new_plane_rental_path(@plane), class: "btn btn-primary btn-lg" %></p>
+    <p><%= link_to "Book this plane", new_plane_rental_path(@plane), class: "btn btn-primary btn-lg button" %></p>
     <% else %>
     <span>Delete<%= link_to plane_path, method: :delete, data: { confirm: "Are you sure?" } do %>
 <i class="fa fa-trash destroy_plane"></i>
@@ -25,9 +25,9 @@ Edit
 </div>
 </div>
 
-
+<!--
 <div class="footer">
   <div class="footer-copyright">
     Have a safe flight from the Amsterdam team <i class="fas fa-plane"></i>
   </div>
-</div>
+</div> -->
